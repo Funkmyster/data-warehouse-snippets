@@ -1,4 +1,4 @@
-# DataWarehouseSnippetsmnnm
+# DataWarehouseSnippets
 
 Borrowed from http://tech.akom.net/archives/36-Creating-A-Basic-Date-Dimension-Table-in-MySQL.html
 
