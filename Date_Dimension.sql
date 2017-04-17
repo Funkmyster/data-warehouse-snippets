@@ -12,10 +12,10 @@ CREATE TABLE IF NOT EXISTS date_dimension  (
     PRIMARY KEY(date_id)
 ) ENGINE=InnoDB AUTO_INCREMENT=1000;
 
+DROP PROCEDURE IF EXISTS datedimbuild;
 
 delimiter //
 
-DROP PROCEDURE IF EXISTS datedimbuild;
 CREATE PROCEDURE datedimbuild (p_start_date DATE, p_end_date DATE)
 BEGIN
     DECLARE v_full_date DATE;
