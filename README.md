@@ -2,7 +2,17 @@
 
 Borrowed from http://tech.akom.net/archives/36-Creating-A-Basic-Date-Dimension-Table-in-MySQL.html
 
-Usage for building Date Dimension:
+Installation:
+```
+bash> mysqladmin create warehouse
+bash> mysql warehouse < Date_Dimension.sql
+bash> mysql warehouse < Time_Dimension.sql
+bash> mysql
+mysql> call datedimbuild('2008-01-01','2012-01-01');
+mysql> call timedimbuild();
+```
+
+Example usage for building Date Dimension:
 ```
 mysql> call datedimbuild('2008-01-01','2012-01-01'); 
 Query OK, 1 row affected (1.69 sec)
@@ -24,7 +34,7 @@ mysql> select ** from datedim limit 10;
 10 rows in set (0.00 sec)
 ```
 
-Usage for building Time Dimension:
+Example usage for building Time Dimension:
 ```
 mysql> call timedimbuild();
 Query OK, 1 row affected (1 min 44.80 sec)
