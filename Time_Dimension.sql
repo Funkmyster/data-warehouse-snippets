@@ -1,11 +1,11 @@
 CREATE TABLE IF NOT EXISTS time_dimension  (
-    time_id INT NOT NULL auto_increment,
+    id INT NOT NULL,
     fulltime time,
     hour int,
     minute int,
     second int,
     ampm varchar(2),
-    PRIMARY KEY(time_id)
+    PRIMARY KEY(id)
 ) ENGINE=InnoDB;
 
 
@@ -23,12 +23,14 @@ BEGIN
     WHILE v_full_date < '2009-03-02 00:00:00' DO
 
         INSERT INTO time_dimension (
+            id,
             fulltime ,
             hour ,
             minute ,
             second ,
             ampm
         ) VALUES (
+            TIME_TO_SEC(v_full_date),
             TIME(v_full_date),
             HOUR(v_full_date),
             MINUTE(v_full_date),

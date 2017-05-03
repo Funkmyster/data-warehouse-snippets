@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS date_dimension  (
-    date_id INT NOT NULL auto_increment,
+    id INT NOT NULL,
     fulldate date,
     dayofmonth int,
     dayofyear int,
@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS date_dimension  (
     monthname varchar(10),
     year    int,
     quarter tinyint,
-    PRIMARY KEY(date_id)
+    PRIMARY KEY(id)
 ) ENGINE=InnoDB AUTO_INCREMENT=1000;
 
 DROP PROCEDURE IF EXISTS datedimbuild;
@@ -26,6 +26,7 @@ BEGIN
     WHILE v_full_date < p_end_date DO
 
         INSERT INTO date_dimension (
+            id,
             fulldate ,
             dayofmonth ,
             dayofyear ,
@@ -36,6 +37,7 @@ BEGIN
             year,
             quarter
         ) VALUES (
+            DATE_FORMAT(v_full_date,"%Y%m%d"),
             v_full_date,
             DAYOFMONTH(v_full_date),
             DAYOFYEAR(v_full_date),
