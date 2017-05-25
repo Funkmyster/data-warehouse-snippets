@@ -16,7 +16,7 @@ Example usage for building Date Dimension:
 ```
 mysql> call datedimbuild('2008-01-01','2012-01-01'); 
 Query OK, 1 row affected (1.69 sec)
-mysql> select ** from datedim limit 10;
+mysql> select * from datedim limit 10;
 +---------+------------+------------+-----------+-----------+-----------+-------------+-----------+------+---------+
 | date_id | fulldate   | dayofmonth | dayofyear | dayofweek | dayname   | monthnumber | monthname | year | quarter |
 +---------+------------+------------+-----------+-----------+-----------+-------------+-----------+------+---------+
@@ -39,7 +39,7 @@ Example usage for building Time Dimension:
 mysql> call timedimbuild();
 Query OK, 1 row affected (1 min 44.80 sec)
 
-mysql> select ** from timedim limit 100,5;
+mysql> select * from timedim limit 100,5;
 +---------+----------+------+--------+--------+------+
 | time_id | fulltime | hour | minute | second | ampm |
 +---------+----------+------+--------+--------+------+
